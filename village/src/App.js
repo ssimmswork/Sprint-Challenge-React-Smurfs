@@ -42,8 +42,16 @@ smurfPost = (event, smurf) => {
   render() {
     return (
       <div className="App">
-        <SmurfForm />
-        <Smurfs smurfs={this.state.smurfs} />
+        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/smurf-form'>Add Smurf</NavLink>
+        <Route 
+          exact path = '/'
+          render = {(props) => 
+          <Smurfs {...props}
+          smurfs={this.state.smurfs}
+          sendNewData={(newData) => this.setState({smurfs: newData})}/>} 
+          /> 
+          
       </div>
     );
   }
