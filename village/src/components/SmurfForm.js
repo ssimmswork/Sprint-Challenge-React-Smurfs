@@ -22,11 +22,10 @@ class SmurfForm extends React.Component {
       .post("http://localhost:3333/smurfs", newSmurf)
     .then(response =>{
       console.log(response)
-     this.props.updateSmurfs(response.data)
+    
      this.props.history.push("./server")
     })
-    .catch(error => console.log(error))
-    .catch(error => {console.log(error)
+       .catch(error => {console.log(error)
     })
   }
 
